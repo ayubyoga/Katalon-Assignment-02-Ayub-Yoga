@@ -2,8 +2,9 @@
 # Assignment 2 - API Testing
 http://jsonplaceholder.typicode.com/	
 
-## About Me :copyright:
+## About Me 
 Tested By		:	Ayub Yoga Pratama
+<br>
 Registry ID		:	KSAT006ONL016
 
 ## :heavy_check_mark: Tools & Utility :
@@ -12,12 +13,12 @@ Registry ID		:	KSAT006ONL016
 
 ## :heavy_check_mark: Items Tested (Endpoints) :
 
-	:one:	Albums
-	:two:	Comments
-	:three:	Photos
-	:four:	Posts
-	:five:	Todos
-	:six:	Users
+	-	Albums
+	-	Comments
+	-	Photos
+	-	Posts
+	-	Todos
+	-	Users
 
 ## :memo: Test Case(s)	:
 	-	Delete By ID
