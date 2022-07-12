@@ -17,5 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Posts/POST - Posts'))
+response4 = WS.sendRequest(findTestObject('Posts/POST - Posts'))
 
+WS.verifyResponseStatusCode(response4, 201, FailureHandling.STOP_ON_FAILURE)
+
+assert response4.getStatusCode() == 201
+
+WS.verifyElementPropertyValue(response4, 'id', '101', FailureHandling.STOP_ON_FAILURE)

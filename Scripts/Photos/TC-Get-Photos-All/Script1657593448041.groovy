@@ -16,6 +16,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import groovy.json.JsonSlurper
 
-WS.sendRequest(findTestObject('Photos/GET - Photos All'))
+response3 = WS.sendRequest(findTestObject('Photos/GET - Photos All'))
 
+def slurper = new JsonSlurper()
+
+def result = slurper.parseText(response3.getResponseBodyContent())
+
+for(int i=0; i < 200; i++) {
+	
+	WS.verifyElementPropertyValue(response3, '[' + i + '].albumId', result[i].albumId)
+	WS.verifyElementPropertyValue(response3, '[' + i + '].id', result[i].id)
+	WS.verifyElementPropertyValue(response3, '[' + i + '].title', result[i].title)
+	WS.verifyElementPropertyValue(response3, '[' + i + '].url', result[i].url)
+	WS.verifyElementPropertyValue(response3, '[' + i + '].thumbnailUrl', result[i].thumbnailUrl)
+}

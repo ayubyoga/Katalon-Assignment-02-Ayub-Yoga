@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC-Get-Users</name>
+   <name>TC-Get-Users-All</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>546950e6-cf63-48f9-9876-475e044d98dd</testCaseGuid>

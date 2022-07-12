@@ -17,5 +17,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Comments/DELETE - Comments'))
+response2 = WS.sendRequest(findTestObject('Comments/DELETE - Comments'))
 
+WS.verifyResponseStatusCode(response2, 200, FailureHandling.STOP_ON_FAILURE)
+
+assert response2.getStatusCode() == 200

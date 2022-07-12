@@ -17,5 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Comments/GET - Comments By ID'))
+response2 = WS.sendRequest(findTestObject('Comments/GET - Comments By ID'))
 
+WS.verifyResponseStatusCode(response2, 200, FailureHandling.STOP_ON_FAILURE)
+
+assert response2.getStatusCode() == 200
+
+WS.verifyElementPropertyValue(response2, 'postId', 1, FailureHandling.STOP_ON_FAILURE)
+
+WS.verifyElementPropertyValue(response2, 'id', 5, FailureHandling.STOP_ON_FAILURE)
+
+WS.verifyElementPropertyValue(response2, 'name', 'vero eaque aliquid doloribus et culpa', FailureHandling.STOP_ON_FAILURE)
+
+WS.verifyElementPropertyValue(response2, 'email', 'Hayden@althea.biz', FailureHandling.STOP_ON_FAILURE)
+
+WS.verifyElementPropertyValue(response2, 'body', 'harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et',
+	FailureHandling.STOP_ON_FAILURE)

@@ -17,5 +17,22 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Users/GET - Users By ID'))
+response6 = WS.sendRequest(findTestObject('Users/GET - Users By ID'))
 
+assert response6.getStatusCode() == 200
+
+WS.verifyElementPropertyValue(response6, 'id', '9')
+WS.verifyElementPropertyValue(response6, 'name', 'Glenna Reichert')
+WS.verifyElementPropertyValue(response6, 'username', 'Delphine')
+WS.verifyElementPropertyValue(response6, 'email', 'Chaim_McDermott@dana.io')
+WS.verifyElementPropertyValue(response6, 'address.street', 'Dayna Park')
+WS.verifyElementPropertyValue(response6, 'address.suite', 'Suite 449')
+WS.verifyElementPropertyValue(response6, 'address.city', 'Bartholomebury')
+WS.verifyElementPropertyValue(response6, 'address.zipcode', '76495-3109')
+WS.verifyElementPropertyValue(response6, 'address.geo.lat', '24.6463')
+WS.verifyElementPropertyValue(response6, 'address.geo.lng', '-168.8889')
+WS.verifyElementPropertyValue(response6, 'phone', '(775)976-6794 x41206')
+WS.verifyElementPropertyValue(response6, 'website', 'conrad.com')
+WS.verifyElementPropertyValue(response6, 'company.name', 'Yost and Sons')
+WS.verifyElementPropertyValue(response6, 'company.catchPhrase', 'Switchable contextually-based project')
+WS.verifyElementPropertyValue(response6, 'company.bs', 'aggregate real-time technologies')

@@ -16,6 +16,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import groovy.json.JsonSlurper
 
-WS.sendRequest(findTestObject('Todos/GET - Todos All'))
+response5 = WS.sendRequest(findTestObject('Todos/GET - Todos All'))
 
+def slurper = new JsonSlurper()
+
+def result = slurper.parseText(response5.getResponseBodyContent())
+
+for(int i=0; i < result.size(); i++) {
+	
+	WS.verifyElementPropertyValue(response5, '[' + i + '].userId', result[i].userId)
+	WS.verifyElementPropertyValue(response5, '[' + i + '].id', result[i].id)
+	WS.verifyElementPropertyValue(response5, '[' + i + '].title', result[i].title)
+	WS.verifyElementPropertyValue(response5, '[' + i + '].completed', result[i].completed)
+}

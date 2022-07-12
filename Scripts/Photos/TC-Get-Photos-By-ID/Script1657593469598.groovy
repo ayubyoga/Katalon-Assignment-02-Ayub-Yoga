@@ -17,5 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Photos/GET - Photos By ID'))
+response3 = WS.sendRequest(findTestObject('Photos/GET - Photos By ID'))
 
+WS.verifyResponseStatusCode(response3, 200, FailureHandling.STOP_ON_FAILURE)
+
+assert response3.getStatusCode() == 200
+
+WS.verifyElementPropertyValue(response3, 'albumId', '1')
+
+WS.verifyElementPropertyValue(response3, 'id', '6')
+
+WS.verifyElementPropertyValue(response3, 'title', 'accusamus ea aliquid et amet sequi nemo')
+
+WS.verifyElementPropertyValue(response3, 'url', 'https://via.placeholder.com/600/56a8c2')
+
+WS.verifyElementPropertyValue(response3, 'thumbnailUrl', 'https://via.placeholder.com/150/56a8c2')

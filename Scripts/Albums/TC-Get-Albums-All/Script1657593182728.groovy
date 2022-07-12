@@ -16,6 +16,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import groovy.json.JsonSlurper as JsonSlurper
 
-WS.sendRequest(findTestObject('Albums/GET - Albums All'))
+response1 = WS.sendRequest(findTestObject('Albums/GET - Albums All'))
+
+WebUI.comment('Verify using looping')
+
+def slurper = new JsonSlurper()
+
+def result = slurper.parseText(response1.getResponseBodyContent())
+
+for (int i = 0; i < result.size(); i++) {
+    WS.verifyElementPropertyValue(response1, ('[' + i) + '].userId', result[i].userId)
+
+    WS.verifyElementPropertyValue(response1, ('[' + i) + '].id', result[i].id)
+
+    WS.verifyElementPropertyValue(response1, ('[' + i) + '].title', result[i].title)
+}
 

@@ -17,5 +17,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WS.sendRequest(findTestObject('Albums/DELETE - Albums'))
+response1 = WS.sendRequest(findTestObject('Albums/DELETE - Albums'))
+
+WebUI.comment('Verify Result')
+
+WS.verifyResponseStatusCode(response1, 200, FailureHandling.STOP_ON_FAILURE)
+
+assert response1.getStatusCode() == 200
 
