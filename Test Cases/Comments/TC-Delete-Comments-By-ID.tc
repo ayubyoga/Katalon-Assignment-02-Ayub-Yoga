@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-Delete-Comments-By-ID</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2bf2a5db-67ed-49bc-bba5-323c6413986d</testCaseGuid>
+</TestCaseEntity>

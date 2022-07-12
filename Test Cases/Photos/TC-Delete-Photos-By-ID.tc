@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-Delete-Photos-By-ID</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>876df5d0-8cd3-41c7-a4ca-8df4b4de0f2d</testCaseGuid>
+</TestCaseEntity>

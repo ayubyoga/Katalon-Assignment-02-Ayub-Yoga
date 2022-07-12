@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-Get-Todos-All</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bdafd6a5-3646-4d4b-a007-037afc611263</testCaseGuid>
+</TestCaseEntity>
